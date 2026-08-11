@@ -1,0 +1,11 @@
+# Lab 1 — Set Up the Agentic AI Development Environment
+python-dotenv
+streamlit
+openai
+openai-agents
+crewai
+autogen-agentchat
+autogen-ext[openai]
+tavily-python
+pypdf
+chromadb

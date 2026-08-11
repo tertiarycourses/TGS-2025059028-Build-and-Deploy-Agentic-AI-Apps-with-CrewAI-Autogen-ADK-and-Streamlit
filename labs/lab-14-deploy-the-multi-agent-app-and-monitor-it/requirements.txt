@@ -1,0 +1,7 @@
+# Lab 14 — Deploy the Multi-Agent App and Monitor It
+python-dotenv
+streamlit
+openai
+openai-agents
+tavily-python
+pydantic

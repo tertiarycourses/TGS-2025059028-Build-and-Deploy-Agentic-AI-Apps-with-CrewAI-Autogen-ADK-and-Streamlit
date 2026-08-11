@@ -1,0 +1,5 @@
+# Lab 13 — Diagnose Deployment Failures from Error Logs
+python-dotenv
+streamlit
+openai
+openai-agents

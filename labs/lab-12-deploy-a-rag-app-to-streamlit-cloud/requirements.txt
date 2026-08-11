@@ -1,0 +1,6 @@
+# Lab 12 — Deploy a RAG App to Streamlit Cloud
+python-dotenv
+streamlit
+openai
+pypdf
+chromadb

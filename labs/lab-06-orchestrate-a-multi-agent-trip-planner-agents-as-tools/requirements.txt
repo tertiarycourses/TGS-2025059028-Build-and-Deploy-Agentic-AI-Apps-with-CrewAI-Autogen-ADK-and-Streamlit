@@ -1,0 +1,7 @@
+# Lab 6 — Orchestrate a Multi-Agent Trip Planner (Agents-as-Tools)
+python-dotenv
+streamlit
+openai
+openai-agents
+tavily-python
+pydantic

@@ -1,0 +1,7 @@
+# Lab 19 — Add Human Oversight and an Audit Log
+python-dotenv
+streamlit
+openai
+openai-agents
+tavily-python
+pydantic

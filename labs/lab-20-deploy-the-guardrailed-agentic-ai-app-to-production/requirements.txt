@@ -1,0 +1,9 @@
+# Lab 20 — Deploy the Guardrailed Agentic AI App to Production
+python-dotenv
+streamlit
+openai
+openai-agents
+tavily-python
+pypdf
+chromadb
+pydantic

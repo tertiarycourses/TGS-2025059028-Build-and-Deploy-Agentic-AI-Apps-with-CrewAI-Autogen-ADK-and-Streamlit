@@ -1,0 +1,6 @@
+# Lab 8 — Build a RAG Pipeline over Invoice PDFs
+python-dotenv
+streamlit
+openai
+pypdf
+chromadb

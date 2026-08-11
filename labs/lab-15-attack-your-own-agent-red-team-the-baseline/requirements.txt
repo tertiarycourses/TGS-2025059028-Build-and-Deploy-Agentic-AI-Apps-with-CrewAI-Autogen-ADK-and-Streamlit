@@ -1,0 +1,6 @@
+# Lab 15 — Attack Your Own Agent — Red-Team the Baseline
+python-dotenv
+streamlit
+openai
+openai-agents
+tavily-python

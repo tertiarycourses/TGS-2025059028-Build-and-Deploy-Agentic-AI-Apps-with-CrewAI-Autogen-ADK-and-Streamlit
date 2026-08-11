@@ -1,0 +1,5 @@
+Log signature,Root cause,Fix,Prevention
+ModuleNotFoundError: No module named X,,,
+KeyError / AuthenticationError 401,,,
+RateLimitError 429,,,
+Tool call failed / validation error,,,

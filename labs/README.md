@@ -1,158 +1,61 @@
-# OpenAI Agent WSQ Course
+# Labs — Build and Deploy Agentic AI Apps with CrewAI, Autogen, ADK and Streamlit
 
-This repository contains Streamlit applications demonstrating AI-powered chatbots and multi-agent systems using both OpenAI and Gemini APIs.
+**WSQ Course Code:** TGS-2025059028  |  **Tertiary Infotech Academy Pte Ltd**
 
-**Live Demo:** [Invoice RAG Chat](https://invoice-rag-openrouter.streamlit.app/)
+20 hands-on labs, one folder each. Every folder is self-contained: a README with the full steps, the app code, and its own requirements.txt.
 
-## Applications
+## Before you start
 
-### 1. Simple Chat (`app/simple_chat.py`)
-
-A simple chatbot agent built with the OpenAI Agents SDK that can search the internet for current information.
-
-**Features:**
-- Conversational chat interface using Streamlit
-- Internet search capability via Tavily API
-- Uses GPT-4.1-mini model
-- Chat history management with "New Chat" button
-
-**Required Environment Variables:**
-- `OPENAI_API_KEY` - Your OpenAI API key
-- `TAVILY_API_KEY` - Your Tavily API key for web search
-
-**Run:**
 ```bash
-streamlit run app/simple_chat.py
+python3 -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+cp .env.example .env            # then paste in your own API keys
+```
+
+Never commit `.env`. For Streamlit Cloud, paste the same keys into the app's Secrets manager instead — see `.streamlit/secrets.toml.example`.
+
+## Learning Unit 01 — Agentic AI App Development with Agentic AI Frameworks
+
+| Lab | Title | Build | Minutes |
+|----|-------|-------|---------|
+| 1 | [Set Up the Agentic AI Development Environment](./lab-01-set-up-the-agentic-ai-development-environment/) | A working .venv with CrewAI, AutoGen, the OpenAI Agents SDK and Streamlit inst… | 45 |
+| 2 | [Compare CrewAI, AutoGen and the OpenAI Agents SDK](./lab-02-compare-crewai-autogen-and-the-openai-agents-sdk/) | A completed framework-comparison matrix with a written, evidence-based recomme… | 30 |
+| 3 | [Build a Single Agent with Tools (OpenAI Agents SDK)](./lab-03-build-a-single-agent-with-tools-openai-agents-sdk/) | A running Streamlit chat app whose agent calls a Tavily search tool to answer … | 60 |
+| 4 | [Build a Role-Based Crew with CrewAI](./lab-04-build-a-role-based-crew-with-crewai/) | A Python script that runs a two-agent CrewAI crew and prints a finished articl… | 60 |
+| 5 | [Build a Conversational Team with AutoGen](./lab-05-build-a-conversational-team-with-autogen/) | An AutoGen round-robin team where an assistant and a critic iterate on a task … | 60 |
+| 6 | [Orchestrate a Multi-Agent Trip Planner (Agents-as-Tools)](./lab-06-orchestrate-a-multi-agent-trip-planner-agents-as-tools/) | A Streamlit app that produces a day-by-day itinerary, a budget breakdown and l… | 75 |
+| 7 | [Accelerate Agent Development with an AI IDE](./lab-07-accelerate-agent-development-with-an-ai-ide/) | A new, working function tool added to simple_chat.py that was drafted by the A… | 45 |
+
+## Learning Unit 02 — Agentic AI and RAG Deployment on Streamlit Cloud
+
+| Lab | Title | Build | Minutes |
+|----|-------|-------|---------|
+| 8 | [Build a RAG Pipeline over Invoice PDFs](./lab-08-build-a-rag-pipeline-over-invoice-pdfs/) | A Streamlit app that indexes the sample invoice PDFs and answers questions abo… | 75 |
+| 9 | [Tune Retrieval Quality — Chunking and Top-K](./lab-09-tune-retrieval-quality-chunking-and-top-k/) | A completed retrieval-tuning table showing accuracy at three chunk sizes and t… | 45 |
+| 10 | [Context Augmentation with a Knowledge Graph](./lab-10-context-augmentation-with-a-knowledge-graph/) | A small invoice knowledge graph (customer → invoice → line item) and a multi-h… | 45 |
+| 11 | [Swap Model Providers — Gemini and OpenRouter](./lab-11-swap-model-providers-gemini-and-openrouter/) | The same RAG app running against three providers, with a comparison of cost, s… | 60 |
+| 12 | [Deploy a RAG App to Streamlit Cloud](./lab-12-deploy-a-rag-app-to-streamlit-cloud/) | A publicly reachable Streamlit Cloud URL running YOUR RAG app, with secrets co… | 75 |
+| 13 | [Diagnose Deployment Failures from Error Logs](./lab-13-diagnose-deployment-failures-from-error-logs/) | A completed error-log triage table mapping four real log signatures to their r… | 45 |
+| 14 | [Deploy the Multi-Agent App and Monitor It](./lab-14-deploy-the-multi-agent-app-and-monitor-it/) | A publicly deployed multi-agent app with caching, a request cap and monitored … | 60 |
+
+## Learning Unit 03 — Model Alignment and Guardrails
+
+| Lab | Title | Build | Minutes |
+|----|-------|-------|---------|
+| 15 | [Attack Your Own Agent — Red-Team the Baseline](./lab-15-attack-your-own-agent-red-team-the-baseline/) | A completed red-team log of attacks attempted, which succeeded, and the guardr… | 45 |
+| 16 | [Implement Input Guardrails with Tripwires](./lab-16-implement-input-guardrails-with-tripwires/) | An input guardrail that blocks the injection and off-topic attacks you logged … | 60 |
+| 17 | [Implement Output Guardrails — PII and Content Filtering](./lab-17-implement-output-guardrails-pii-and-content-filtering/) | An output guardrail that redacts PII from RAG answers and blocks policy-violat… | 60 |
+| 18 | [Evaluate Model Alignment — Helpful, Harmless, Honest](./lab-18-evaluate-model-alignment-helpful-harmless-honest/) | A scored alignment evaluation across ten prompts, with the helpful/harmless/ho… | 45 |
+| 19 | [Add Human Oversight and an Audit Log](./lab-19-add-human-oversight-and-an-audit-log/) | An agent with a human-approval gate on high-risk actions and a persistent JSON… | 45 |
+| 20 | [Deploy the Guardrailed Agentic AI App to Production](./lab-20-deploy-the-guardrailed-agentic-ai-app-to-production/) | A publicly deployed, fully guardrailed Agentic AI application that passes a li… | 75 |
+
+## Running a lab
+
+```bash
+cd lab-03-build-a-single-agent-with-tools-openai-agents-sdk
+pip install -r requirements.txt
+streamlit run app.py            # or: python app.py
 ```
 
 ---
 
-### 2. Invoice RAG Chat
-
-A Retrieval-Augmented Generation (RAG) application for querying invoice PDFs using natural language.
-
-#### OpenAI Version (`app/invoice_rag.py`)
-
-**Features:**
-- Upload and index multiple PDF invoices
-- Extracts text from PDFs and chunks it for embedding
-- Stores embeddings in ChromaDB vector database
-- Semantic search to find relevant invoice context
-- Chat interface to ask questions about your invoices
-- Uses OpenAI's `text-embedding-3-large` for embeddings
-- Uses GPT-4.1-mini for generating responses
-
-**Required Environment Variables:**
-- `OPENAI_API_KEY` - Your OpenAI API key
-
-**Run:**
-```bash
-streamlit run app/invoice_rag.py
-```
-
-#### Gemini Version (`app/invoice_rag_gemini.py`)
-
-**Features:**
-- Same functionality as the OpenAI version
-- Uses Gemini's `text-embedding-004` for embeddings
-- Uses `gemini-2.0-flash-lite` for generating responses
-- Uses Gemini's OpenAI-compatible API endpoint
-
-**Required Environment Variables:**
-- `GEMINI_API_KEY` - Your Google Gemini API key
-
-**Run:**
-```bash
-streamlit run app/invoice_rag_gemini.py
-```
-
-#### OpenRouter Version (`app/invoice_rag_openrouter.py`)
-
-**Features:**
-- Same functionality as the OpenAI version
-- Uses OpenRouter's API for model access
-- Uses `openai/text-embedding-3-small` for embeddings
-- Uses `google/gemini-2.5-flash-lite` for generating responses
-
-**Required Environment Variables:**
-- `OPENROUTER_API_KEY` - Your OpenRouter API key
-
-**Run:**
-```bash
-streamlit run app/invoice_rag_openrouter.py
-```
-
----
-
-### 3. Multi-Agent Trip Planner
-
-A multi-agent AI system that orchestrates multiple specialized agents to plan trips. This demonstrates real-world agentic AI patterns used in enterprise automation.
-
-#### OpenAI Version (`app/trip_planner.py`)
-
-**Features:**
-- Multiple specialized AI agents working together:
-  - 🧠 **Planner Agent** - Creates day-by-day itineraries (uses Tavily search for attractions)
-  - 💰 **Budget Agent** - Estimates and tracks trip costs (uses Tavily search for prices)
-  - 🍣 **Local Guide Agent** - Recommends food and local tips (uses Tavily search for restaurants)
-- ✈️ **Travel Agent Orchestrator** - Coordinates all agents using `.as_tool()` pattern
-- **Tavily Search Integration** - Each agent searches for real-time, accurate information
-- Interactive UI for entering trip details
-- Structured output using Pydantic models
-- Tabbed results display for organized output
-- Uses GPT-4.1-mini model for all agents
-
-**Required Environment Variables:**
-- `OPENAI_API_KEY` - Your OpenAI API key
-- `TAVILY_API_KEY` - Your Tavily API key for real-time search
-
-**Run:**
-```bash
-streamlit run app/trip_planner.py
-```
-
-#### Gemini Version (`app/trip_planner_gemini.py`)
-
-**Features:**
-- Same multi-agent functionality as the OpenAI version
-- Uses Gemini's OpenAI-compatible API endpoint
-- Uses `gemini-2.0-flash` model for all agents
-
-**Required Environment Variables:**
-- `GEMINI_API_KEY` - Your Google Gemini API key
-- `TAVILY_API_KEY` - Your Tavily API key for real-time search
-
-**Run:**
-```bash
-streamlit run app/trip_planner_gemini.py
-```
-
----
-
-## Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/alfredang/TGS-2025059028-openai-agent-wsq-course.git
-   cd TGS-2025059028-openai-agent-wsq-course
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install streamlit openai python-dotenv pypdf chromadb tavily-python openai-agents
-   ```
-
-3. Create a `.env` file in the project root by copying the template and pasting in your own keys:
-   ```bash
-   cp app/.env.example .env
-   ```
-   ```
-   OPENAI_API_KEY=your_openai_api_key
-   GEMINI_API_KEY=your_gemini_api_key
-   OPENROUTER_API_KEY=your_openrouter_api_key
-   TAVILY_API_KEY=your_tavily_api_key
-   ```
-   **Never commit `.env`** — it is git-ignored. For Streamlit Cloud deployment, paste the same
-   keys into the app's Secrets manager instead (see `.streamlit/secrets.toml.example`).
-
-4. Run any application using the commands above.
+© 2026 Tertiary Infotech Academy Pte Ltd (UEN 201200696W). Provided for the use of enrolled learners.

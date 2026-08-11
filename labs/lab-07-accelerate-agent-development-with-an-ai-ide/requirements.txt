@@ -1,0 +1,6 @@
+# Lab 7 — Accelerate Agent Development with an AI IDE
+python-dotenv
+streamlit
+openai
+openai-agents
+tavily-python

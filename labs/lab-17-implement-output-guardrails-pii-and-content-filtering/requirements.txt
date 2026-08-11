@@ -1,0 +1,7 @@
+# Lab 17 — Implement Output Guardrails — PII and Content Filtering
+python-dotenv
+streamlit
+openai
+pypdf
+chromadb
+pydantic

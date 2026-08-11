@@ -1,0 +1,4 @@
+# Lab 10 — Context Augmentation with a Knowledge Graph
+python-dotenv
+networkx
+matplotlib

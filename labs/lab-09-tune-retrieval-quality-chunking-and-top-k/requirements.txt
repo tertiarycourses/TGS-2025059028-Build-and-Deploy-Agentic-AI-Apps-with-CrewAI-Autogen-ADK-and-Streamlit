@@ -1,0 +1,6 @@
+# Lab 9 — Tune Retrieval Quality — Chunking and Top-K
+python-dotenv
+streamlit
+openai
+pypdf
+chromadb

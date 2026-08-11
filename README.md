@@ -81,21 +81,22 @@ Aligned to Skills Framework TSC **Generative AI Application Development and Depl
 
 ```
 labs/
-  app/
-    simple_chat.py              Activity 3  — agent + Tavily search tool
-    crew_content.py             Activity 4  — CrewAI role-based crew
-    autogen_team.py             Activity 5  — AutoGen writer/critic team
-    trip_planner.py             Activity 6  — multi-agent orchestrator
-    trip_planner_gemini.py                  — Gemini variant
-    invoice_rag.py              Activity 8  — RAG over invoice PDFs
-    invoice_rag_gemini.py       Activity 11 — Gemini variant
-    invoice_rag_openrouter.py   Activity 11 — OpenRouter variant
-    guarded_chat.py             Activities 16, 17, 19 — guardrails + audit log
-    fakes invoices/             sample PDFs for the RAG activities
-  data/                         datasets for the analysis activities
-  .streamlit/                   Streamlit Cloud secrets template
-courseware/                     slide deck, Lesson Plan, Learner Guide (+ PDFs)
+  lab-01-set-up-the-agentic-ai-development-environment/
+    README.md          the goal, the workflow, every step, the "Test it" check
+    app.py             the runnable app  (streamlit run app.py | python app.py)
+    requirements.txt   only what THIS lab needs
+    data/              any CSV or sample PDFs the lab uses
+  lab-02-compare-crewai-autogen-and-the-openai-agents-sdk/
+  lab-03-build-a-single-agent-with-tools-openai-agents-sdk/
+  …                    20 self-contained lab folders in all
+  README.md            the lab index, grouped by Learning Unit
+  .env.example         copy to .env at the labs root and add your own keys
+courseware/            slide deck (202 slides), Lesson Plan, Learner Guide (+ PDFs)
 ```
+
+Every lab folder is self-contained: read its README, install its own
+`requirements.txt`, run its `app.py`. One shared `.env` at the labs root supplies
+the API keys to all of them.
 
 ## Setup
 
@@ -104,13 +105,18 @@ git clone https://github.com/tertiarycourses/TGS-2025059028-Build-and-Deploy-Age
 cd TGS-2025059028-Build-and-Deploy-Agentic-AI-Apps-with-CrewAI-Autogen-ADK-and-Streamlit
 
 python3 -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
-pip install -r labs/requirements.txt
+```
+
+Then install per lab — each folder declares only what it needs:
+
+```bash
+pip install -r labs/lab-03-build-a-single-agent-with-tools-openai-agents-sdk/requirements.txt
 ```
 
 Create your `.env` from the template and paste in your own keys:
 
 ```bash
-cp labs/app/.env.example .env
+cp labs/.env.example labs/.env
 ```
 
 | Key | Where to get it | Free tier |
@@ -123,16 +129,24 @@ cp labs/app/.env.example .env
 > **Never commit `.env`.** It is git-ignored. For Streamlit Cloud, paste the same keys into the
 > app's **Secrets** manager instead (see `labs/.streamlit/secrets.toml.example`).
 
+The current trainer deck is `courseware/Build and Deploy Agentic AI Apps with CrewAI, Autogen, ADK and Streamlit-v2.pptx` (202 slides).
+
 ## Run
 
-```bash
-streamlit run labs/app/simple_chat.py        # Activity 3  — chat agent with web search
-streamlit run labs/app/trip_planner.py       # Activity 6  — multi-agent trip planner
-streamlit run labs/app/invoice_rag.py        # Activity 8  — invoice RAG
-streamlit run labs/app/guarded_chat.py       # Activity 16 — guardrailed agent
+Each lab runs from its own folder:
 
-python labs/app/crew_content.py              # Activity 4  — CrewAI crew
-python labs/app/autogen_team.py              # Activity 5  — AutoGen team
+```bash
+cd labs/lab-03-build-a-single-agent-with-tools-openai-agents-sdk
+pip install -r requirements.txt
+streamlit run app.py                         # Activity 3 — chat agent with web search
+```
+
+```bash
+cd labs/lab-04-build-a-role-based-crew-with-crewai   && python app.py
+cd labs/lab-05-build-a-conversational-team-with-autogen && python app.py
+cd labs/lab-06-orchestrate-a-multi-agent-trip-planner-agents-as-tools && streamlit run app.py
+cd labs/lab-08-build-a-rag-pipeline-over-invoice-pdfs && streamlit run app.py
+cd labs/lab-16-implement-input-guardrails-with-tripwires && streamlit run app.py
 ```
 
 ## Deploy to Streamlit Community Cloud

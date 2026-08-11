@@ -37,3 +37,16 @@ labs/.streamlit/secrets.toml
 # build_assessment.py carries the assessment model answers, so .claude must never be pushed.
 .claude/
 reference/
+
+# ---------------------------------------------------------------- distribution archives
+# Rebuildable bundles — never pushed to GitHub. Use a Release asset instead.
+*.zip
+
+# ---------------------------------------------------------------- derived-from source material
+# reference/ holds the original deck this courseware was derived from — third-party
+# material that is not ours to republish.
+**/reference/
+# ...but the wsq-slides skill ships a reference IMPLEMENTATION (builder scripts the
+# toolchain actually runs). That is working code, not source material — keep it.
+!.claude/skills/**/reference/
+!.claude/skills/**/reference/**

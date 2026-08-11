@@ -1,0 +1,8 @@
+Source,Relationship,Target
+Aaron Hawkins,HAS_INVOICE,47905
+Aaron Hawkins,HAS_INVOICE,36652
+Aaron Hawkins,HAS_INVOICE,38460
+47905,CONTAINS,Office Chair
+36652,CONTAINS,Desk Lamp
+Adam Bellavance,HAS_INVOICE,21617
+21617,CONTAINS,Office Chair

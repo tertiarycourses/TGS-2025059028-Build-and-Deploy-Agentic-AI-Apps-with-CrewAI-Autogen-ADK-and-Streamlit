@@ -1,0 +1,2 @@
+# Lab 2 — Compare CrewAI, AutoGen and the OpenAI Agents SDK
+python-dotenv

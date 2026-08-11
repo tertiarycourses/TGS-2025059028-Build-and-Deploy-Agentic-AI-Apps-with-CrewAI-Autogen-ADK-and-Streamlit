@@ -1,0 +1,6 @@
+# Lab 11 — Swap Model Providers — Gemini and OpenRouter
+python-dotenv
+streamlit
+openai
+pypdf
+chromadb

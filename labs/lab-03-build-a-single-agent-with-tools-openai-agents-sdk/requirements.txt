@@ -1,0 +1,6 @@
+# Lab 3 — Build a Single Agent with Tools (OpenAI Agents SDK)
+python-dotenv
+streamlit
+openai
+openai-agents
+tavily-python

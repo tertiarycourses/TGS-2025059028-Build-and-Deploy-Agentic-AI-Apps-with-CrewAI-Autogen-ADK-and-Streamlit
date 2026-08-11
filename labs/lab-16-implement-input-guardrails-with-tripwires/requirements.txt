@@ -1,0 +1,7 @@
+# Lab 16 — Implement Input Guardrails with Tripwires
+python-dotenv
+streamlit
+openai
+openai-agents
+tavily-python
+pydantic

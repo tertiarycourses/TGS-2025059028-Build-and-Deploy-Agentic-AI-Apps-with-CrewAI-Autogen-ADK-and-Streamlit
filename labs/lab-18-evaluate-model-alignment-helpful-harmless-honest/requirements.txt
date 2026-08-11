@@ -1,0 +1,4 @@
+# Lab 18 — Evaluate Model Alignment — Helpful, Harmless, Honest
+python-dotenv
+openai
+openai-agents

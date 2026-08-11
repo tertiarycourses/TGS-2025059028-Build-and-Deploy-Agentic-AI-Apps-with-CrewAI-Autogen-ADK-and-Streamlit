@@ -1,0 +1,4 @@
+# Lab 5 — Build a Conversational Team with AutoGen
+python-dotenv
+autogen-agentchat
+autogen-ext[openai]
