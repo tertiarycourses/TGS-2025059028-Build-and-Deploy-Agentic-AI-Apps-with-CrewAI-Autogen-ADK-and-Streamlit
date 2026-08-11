@@ -1,0 +1,7 @@
+Criterion,Weight,CrewAI,AutoGen,OpenAI Agents SDK
+Orchestration style,5,Role-based crew,Conversational,Handoff / tools
+Human-in-the-loop,4,Limited,Built-in,Via guardrails
+Learning curve,3,Low,Medium,Low
+Tool ecosystem,5,Rich,Rich,Function tools
+Production readiness,5,Good,Good,Excellent
+Multi-model support,4,Yes,Yes,Via base_url

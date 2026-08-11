@@ -1,30 +1,39 @@
-# Python
+# ---------------------------------------------------------------- CONFIDENTIAL
+# WSQ assessment material (question papers AND answer keys) is trainer-only and
+# is distributed via Google Drive / LMS-TMS. It must NEVER be committed.
+assessment/
+**/assessment/
+
+# ---------------------------------------------------------------- secrets
+.env
+.env.*
+!.env.example
+*.key
+.streamlit/secrets.toml
+
+# ---------------------------------------------------------------- python
+.venv/
+venv/
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-.venv/
-*.egg-info/
-dist/
-build/
+.chroma/
+chroma_db/
 
-# Environment
-.env
-.env.local
-
-# IDE
-.vscode/
-.idea/
-
-# OS
+# ---------------------------------------------------------------- os / office junk
 .DS_Store
 Thumbs.db
+~$*
+*.tmp
 
-# Logs
-*.log
+# ---------------------------------------------------------------- build scratch
+courseware/archive/*.tmp
+labs/data/audit_log.jsonl
 
-# Streamlit secrets
-.streamlit/secrets.toml
+# lab secret files — templates only ship
+labs/app/.env
+labs/.streamlit/secrets.toml
+
+# Courseware build toolchain and generators — internal, not for the public course repo.
+# build_assessment.py carries the assessment model answers, so .claude must never be pushed.
+.claude/
+reference/
