@@ -13,6 +13,14 @@ Autogen, ADK and Streamlit** (**TGS-2025059028**), delivered by
 
 **Live demo:** [Invoice RAG Chat](https://invoice-rag-openrouter.streamlit.app/)
 
+| Course detail | Information |
+|---|---|
+| Course code | `TGS-2025059028` |
+| Programme | WSQ |
+| Duration | 4 days · 32 hours (incl. 2-hour assessment) |
+| Registration | [View course details and register](https://www.tertiarycourses.com.sg/wsq-build-and-deploy-agentic-ai-apps-with-crewai-autogen-adk-and-streamlit.html) |
+| Funding | Up to 70% course-fee funding for eligible Singapore Citizens and PRs (50% baseline; 70% for SME-sponsored learners and Singapore Citizens aged 40+), as shown on the official course page. Eligibility and terms apply. |
+
 ---
 
 ## What you build
@@ -160,9 +168,15 @@ cd labs/lab-16-implement-input-guardrails-with-tripwires && streamlit run app.py
 
 ## Courseware
 
-Slides, the Lesson Plan and the Learner Guide are distributed to enrolled learners through
-[lms-tms.tertiaryinfotech.com](https://lms-tms.tertiaryinfotech.com). Assessment material is
-confidential and is **not** published in this repository.
+The current courseware is published in this repository and is also distributed to enrolled
+learners through [lms-tms.tertiaryinfotech.com](https://lms-tms.tertiaryinfotech.com):
+
+- [Slide deck (PPTX)](<courseware/Build and Deploy Agentic AI Apps with CrewAI, Autogen, ADK and Streamlit-v2.pptx>) · [PDF](<courseware/Build and Deploy Agentic AI Apps with CrewAI, Autogen, ADK and Streamlit-v2.pdf>)
+- [Learner Guide (DOCX)](<courseware/LG-Build and Deploy Agentic AI Apps with CrewAI, Autogen, ADK and Streamlit.docx>) · [PDF](<courseware/LG-Build and Deploy Agentic AI Apps with CrewAI, Autogen, ADK and Streamlit.pdf>) · [Markdown](<LG-Build and Deploy Agentic AI Apps with CrewAI, Autogen, ADK and Streamlit.md>)
+- [Lesson Plan (DOCX)](<courseware/LP-Build and Deploy Agentic AI Apps with CrewAI, Autogen, ADK and Streamlit.docx>) · [PDF](<courseware/LP-Build and Deploy Agentic AI Apps with CrewAI, Autogen, ADK and Streamlit.pdf>)
+
+Assessment material and source references are confidential and are **not** published in this
+repository.
 
 ## Acknowledgements
 
